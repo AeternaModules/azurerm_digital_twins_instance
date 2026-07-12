@@ -1,3 +1,7 @@
+output "digital_twins_instances_id" {
+  description = "Map of id values across all digital_twins_instances, keyed the same as var.digital_twins_instances"
+  value       = { for k, v in azurerm_digital_twins_instance.digital_twins_instances : k => v.id }
+}
 output "digital_twins_instances_host_name" {
   description = "Map of host_name values across all digital_twins_instances, keyed the same as var.digital_twins_instances"
   value       = { for k, v in azurerm_digital_twins_instance.digital_twins_instances : k => v.host_name }
